@@ -27,6 +27,11 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	virtual void OnScreenTouch(ETouchIndex::Type FingerIndex, FVector ScreenPos);
+
+	bool WorldHitTest(FVector2D ScreenPos, FHitResult& OutResult);
+
+public:
 	UPROPERTY(Category="ArProj", VisibleAnywhere, BlueprintReadWrite)
 	USceneComponent* SceneComponent = nullptr;
 
