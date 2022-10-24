@@ -3,9 +3,7 @@
 
 #include "CustomARPawn.h"
 #include "ARBlueprintLibrary.h"
-
-#define PRINT(msg) GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, TEXT(msg), false)
-#define PRINTF(msg, ...) GEngine->AddOnScreenDebugMessage(-1, 15.f, FColor::Yellow, FString::Printf(TEXT(msg), __VA_ARGS__), false)
+#include "LogUtils.h"
 
 // Sets default values
 ACustomARPawn::ACustomARPawn()
@@ -26,8 +24,6 @@ void ACustomARPawn::BeginPlay()
 
 	UARSessionConfig* Config = NewObject<UARSessionConfig>();
 	UARBlueprintLibrary::StartARSession(Config);
-
-	PRINT("hello world");
 }
 
 // Called every frame

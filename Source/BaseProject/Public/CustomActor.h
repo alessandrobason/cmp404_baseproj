@@ -23,9 +23,15 @@ public:
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
+	virtual void PostInitializeComponents() override;
+
 	UPROPERTY(Category="ArProj", VisibleAnywhere, BlueprintReadWrite)
 	USceneComponent* SceneComponent = nullptr;
 
 	UPROPERTY(Category="ArProj", VisibleAnywhere, BlueprintReadWrite)
 	UStaticMeshComponent* StaticMeshComponent = nullptr;
+
+private:
+	FVector InitLocation = FVector::Zero();
+	FMatrix InitMatrix = FMatrix::Identity;
 };
